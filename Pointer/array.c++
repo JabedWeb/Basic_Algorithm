@@ -10,10 +10,12 @@ int main() {
      * value a[i] or *(a+i)
      */
 
-    cout << a << endl;  // 6422284
-    cout << (a+1) << endl;  //6422288
+    cout << "address " << a << endl; //0x61fefc
+    cout << &a[0] << endl; //0x61fefc
+    cout << (a+1) << endl;  //0x61ff00
 
     cout << *a << endl; //10
+    cout << a[0] << endl; //10
     cout << *(a+1) << endl; //20
 
     return 0;
