@@ -10,9 +10,13 @@ int main (){
 
     //without asterisk sign it point out the value of memory address 
     printf("%d\n",p);//6422296
-    
-    // as int data type takes 4 bytes and 
-    //that why increment 4 that indicates next memory for another variable
+
+    /**
+     * @brief 
+     *  as int data type takes 4 bytes and 
+     * that why increment 4 that indicates next memory for another variable
+     * 
+     */
     printf("%d\n",p+1);//6422300
 
     return 0;
