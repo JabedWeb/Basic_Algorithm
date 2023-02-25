@@ -1,15 +1,16 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
-int main (){
+int main() {
     int a = 10;
     int *p = &a;
 
     //asterisk sign point out the value of  memory address
-    printf("%d\n", *p);//10
-    printf("%d\n", *p+1);//11
+    cout << *p << endl; //10
+    cout << *p+1 << endl; //11
 
     //without asterisk sign it point out the value of memory address 
-    printf("%d\n",p);//6422296
+    cout << p << endl; //6422296
 
     /**
      * @brief 
@@ -17,7 +18,7 @@ int main (){
      * that why increment 4 that indicates next memory for another variable
      * 
      */
-    printf("%d\n",p+1);//6422300
+    cout << p+1 << endl; //6422300
 
     return 0;
-} 
+}
