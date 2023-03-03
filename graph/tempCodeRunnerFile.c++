@@ -1,6 +1,5 @@
-0 1
-2 0
-2 1
-1 3
-3 4
-1 4
+    // for(int i=0; i<node; i++){
+    //     if (visited[i]==false){
+    //         bfs(i);
+    //     }
+    // }
