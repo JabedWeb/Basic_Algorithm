@@ -6,7 +6,6 @@ using namespace std;
 #define MAX 1000
 vector<int> adj[MAX];
 bool visited[MAX];
-int add_matrix[MAX][MAX];
 
 void edge(int x, int y){
     adj[x].push_back(y);

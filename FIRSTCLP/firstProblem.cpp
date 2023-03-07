@@ -75,8 +75,8 @@ output
 */
 
 void printAdjacentMatrix(int V){
-    for(int i=0; i<V; i++){
-        for(int j=0; j<V; j++){
+    for(int i=1; i<=V; i++){
+        for(int j=1; j<=V; j++){
             cout << add_matrix[i][j] << " ";
         }
         cout << endl;
