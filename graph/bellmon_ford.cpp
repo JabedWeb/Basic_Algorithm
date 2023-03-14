@@ -3,42 +3,68 @@
 // find the single source shortest path
 #include<bits/stdc++.h>
 using namespace std;
-const int INF=1e9;
+
+const int INF = 1e9;
 
 int main() {
-    int n,m;
-    cin >> n>>m;
-    vector <int>dist(n+1,INF);
-    vector <vector <pair<int,int>>> g(n+1);
+    int n, m;
+    cin >> n >> m;
 
-    for(int i=0;i<m;i++) {
-        int u,v,w;
-        cin>> u >> v>> w;
-        g[u].push_back({v,w});
-        g[v].push_back({u,w});
+    vector<int> dist(n + 1, INF);
+    vector<vector<pair<int,int>>> g(n + 1);
+
+    for(int i = 0; i < m; i++) {
+        int u, v, w;
+        cin >> u >> v >> w;
+        g[u].push_back({v, w});
     }
 
-    //starting
+    //starting vertex
     int s;
-    cin>>s;
-    dist[s]=0;
-    set<pair<int,int>>Sh;
-    Sh.insert({0,s});
+    cin >> s;
+    dist[s] = 0;
 
-    while (!Sh.empty()){
-        auto x=*(Sh.begin());
-        Sh.erase(x);
-        for(auto i : g[x.second]){
-            if(dist[i.first] >dist[x.second]+i.second){
-                Sh.erase({dist[i.first],i.first});
-                dist[i.first]=dist[x.second]+i.second;
-                Sh.insert({dist[i.first],i.first});
+    // Bellman-Ford Algorithm
+        for(int k = 1; k <= n - 1; k++) {
+            for(int u = 1; u <= n; u++) {
+                for(int i = 0; i < g[u].size(); i++) {
+                    int v = g[u][i].first;
+                    int w = g[u][i].second;
+                    if(dist[u] != INF && dist[v] > dist[u] + w) {
+                        dist[v] = dist[u] + w;
+                    }
+                }
             }
         }
 
+
+    // check for negative cycles
+        bool hasNegativeCycle = false;
+        for(int u = 1; u <= n; u++) {
+            for(int i = 0; i < g[u].size(); i++) {
+                int v = g[u][i].first;
+                int w = g[u][i].second;
+                if(dist[u] != INF && dist[v] > dist[u] + w) {
+                    hasNegativeCycle = true;
+                }
+            }
+        }
+
+
+    if(hasNegativeCycle) {
+        cout << "The graph contains negative cycles" << endl;
     }
-    for(int i=1;i<=n;i++) {
-        cout <<dist[i] <<" ";
+    else {
+        // print shortest distances
+        for(int i = 1; i <= n; i++) {
+            if(dist[i] == INF) {
+                cout << "INF ";
+            }
+            else {
+                cout << dist[i] << " ";
+            }
+        }
+        cout << endl;
     }
     return 0;
 }
