@@ -3,6 +3,12 @@ using namespace std;
 
 vector <int> adj[100];
 
+vector <int> ad;
+
+
+
+// 1 2 3 4
+
 int main () {
     int vertices, edges;
     cout<<"Enter the number of vertices and edges: ";   
@@ -23,3 +29,16 @@ int main () {
         puts("");
     }
 }
+
+    //     1   
+    //   /  \
+    //   2  3
+    //   \  /
+    //     4
+
+
+    // adjacent list 
+    // 1->2 3
+    // 2->1 4
+    // 3->1 4
+    //4->2 3

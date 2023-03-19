@@ -64,9 +64,6 @@ void bfs(int start){
     }
 }
 
-
-
-
 int main (){
 
     int node,edges;
@@ -77,7 +74,7 @@ int main (){
         int x,y;
         cout <<"Enter the edges : ";
         cin >> x >> y;
-        edge(x,y);
+        edge(x,y); 
     }
 
 
