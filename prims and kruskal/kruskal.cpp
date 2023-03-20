@@ -52,8 +52,12 @@ int main()
     for (auto i : edges)
     {
         int w = i[0];
+        cout<<"W -> "<<w<<endl;
         int u = i[1];
+         cout<<"u -> "<<u<<endl;
         int v = i[2];
+
+         cout<<"v -> "<<v<<endl;
         int x = find_set(u);
         int y = find_set(v);
 
