@@ -8,7 +8,6 @@ int main(){
     int n;
     cout<<"Enter the number of nodes: "<<endl;
     cin>>n;
-
     int m;
     cout<<"Enter the number of edges: "<<endl;
     cin>>m;
