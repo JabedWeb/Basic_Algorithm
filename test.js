@@ -1,13 +1,7 @@
-//loop
+//What does window.location.href return?
+//returns the url of the current page
 
-var i = 0;
-while (i < 10) {
-    console.log(i);
-    i++;
-}
-let j = 0;
-do {
-    console.log(j);
-    j++;
-}
-while (j < 10);
+
+//Suppose you open “https://react.dev/learn/tutorial-tic-tac-toe” in your browser and write location.pathname in your browser console . What will you get?
+
+location.pathname
